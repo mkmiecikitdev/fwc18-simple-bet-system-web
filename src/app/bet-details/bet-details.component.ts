@@ -31,7 +31,7 @@ export class BetDetailsComponent implements OnInit {
   }
 
   canSend() {
-    return this.bet && this.betForm && this.betForm.team1Bet && this.betForm.team2Bet;
+    return this.bet && this.betForm && this.betForm.team1Bet != null && this.betForm.team2Bet != null;
   }
 
 }
