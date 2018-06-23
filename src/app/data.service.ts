@@ -14,7 +14,7 @@ export class DataService {
   private API_URL_LOCAL = 'http://localhost:3801/api/';
   private API_URL_REMOTE = 'http://147.135.211.36:3801/api/';
 
-  private API_URL = this.API_URL_LOCAL;
+  private API_URL = this.API_URL_REMOTE;
 
   private LOGIN_ENDPOINT = 'login';
   private BETS_ENDPOINT = 'bets';
