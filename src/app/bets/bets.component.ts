@@ -10,7 +10,8 @@ import {Router} from '@angular/router';
 })
 export class BetsComponent implements OnInit {
 
-  bets: Bet[] = [];
+  newBets: Bet[] = [];
+  oldBets: Bet[] = [];
 
   constructor(private dataService: DataService, private router: Router) {
   }
@@ -28,12 +29,22 @@ export class BetsComponent implements OnInit {
 
   loadBets() {
     this.dataService.bets()
-      .subscribe(response => this.bets = response);
+      .subscribe(response => this.setLists(response));
   }
 
   logout() {
     DataService.logout();
     this.router.navigateByUrl('/login');
+  }
+
+  setLists(bets: Bet[]) {
+    for (const bet of bets) {
+      if (bet.canBet) {
+        this.newBets.push(bet);
+      } else {
+        this.oldBets.push(bet);
+      }
+    }
   }
 
 }

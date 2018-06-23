@@ -1,7 +1,19 @@
 <button (click)="logout()">logout</button>
 
-<ul class="bet_list">
-  <li *ngFor="let bet of bets">
-    <app-bet-details [bet]="bet"></app-bet-details>
-  </li>
-</ul>
+<div class="bets-list">
+
+  <div class="bets-column">
+    <div *ngFor="let bet of newBets" class="bets-new">
+      <app-bet-details [bet]="bet" ></app-bet-details>
+    </div>
+  </div>
+
+  <div class="bets-column">
+    <div *ngFor="let bet of oldBets" class="bets-old">
+      <app-bet-details [bet]="bet" ></app-bet-details>
+    </div>
+  </div>
+
+</div>
+
+

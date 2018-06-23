@@ -1,0 +1,17 @@
+.bets-list {
+  display: inline-flex;
+  width: 100%;
+}
+
+.bets-column {
+  width: 50%;
+  margin: 5px;
+}
+
+.bets-new {
+  background-color: lightgreen;
+}
+
+.bets-old {
+  background-color: indianred;
+}
