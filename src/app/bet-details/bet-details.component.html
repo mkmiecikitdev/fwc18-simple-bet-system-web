@@ -1,0 +1,37 @@
+<div class="bet-details">
+
+  <span>Termin: {{bet.time}}</span>
+
+  <br>
+
+  <span>{{bet.team1.name}} {{bet.team1.score}} - {{bet.team2.score}} {{bet.team2.name}}</span>
+
+  <br>
+
+  <span>{{bet.player1.name}} typ: {{bet.player1.team1Bet}} - {{bet.player1.team2Bet}}
+    <span *ngIf="bet.player1.score">, punkty: {{bet.player1.score}}</span>
+  </span>
+
+  <br>
+
+  <span>{{bet.player2.name}} typ: {{bet.player2.team1Bet}} - {{bet.player2.team2Bet}}
+    <span *ngIf="bet.player2.score">, punkty: {{bet.player2.score}}</span>
+  </span>
+
+  <div *ngIf="bet.canBet">
+    <label>
+      <input [(ngModel)]="betForm.team1Bet" placeholder={{bet.team1.name}} type="number">
+    </label>
+
+    <span> - </span>
+
+    <label>
+      <input [(ngModel)]="betForm.team2Bet" placeholder={{bet.team2.name}} type="number">
+    </label>
+
+    <button (click)="sendBet()">submit</button>
+  </div>
+
+
+
+</div>
