@@ -18,7 +18,6 @@ export class BetsComponent implements OnInit {
 
   ngOnInit() {
 
-
     if (DataService.isUserLogin()) {
       this.loadBets();
     } else {
@@ -38,6 +37,9 @@ export class BetsComponent implements OnInit {
   }
 
   setLists(bets: Bet[]) {
+    this.newBets = [];
+    this.oldBets = [];
+
     for (const bet of bets) {
       if (bet.canBet) {
         this.newBets.push(bet);
